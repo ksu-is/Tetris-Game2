@@ -21,9 +21,6 @@ pygame.display.set_caption("Tetris Game 2.0")
 
 clock = pygame.time.Clock()
 
-#Adding a new Background
-background_img = pygame.image.load('background2.jpg')
-
 #create game object
 game = Game()
 
@@ -58,9 +55,6 @@ while True:
     score_value_surface = title_font.render(str(game.score), True, Colors.orange)
     
     screen.fill(Colors.black)
-    #Adding image to background
-    screen.blit(background_img, (0, 0))
-    #Adding scoreboard backgroud
     screen.blit(score_surface, (365, 20, 50, 50))
     screen.blit(next_surface,(375, 180, 50, 50))
     
