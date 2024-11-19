@@ -9,10 +9,8 @@ Create the repository for Tetris
  Complete Sprint 1 quiz
 
 Sprint 2:
- Update code and add commit messages
- Experiment with parts of existing code
- Update READ.me file with additional project description
- Make small changes to the game's appearance
+ Experiment with parts of existing code, review then update code
+ Update READ.me file with additional project description and recent updates
  Make at least 6 changes and commit them
  Complete Sprint 2 quiz
 
