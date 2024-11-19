@@ -17,7 +17,7 @@ next_rect = pygame.Rect(320, 215, 170, 180)
 
 #create game window
 screen = pygame.display.set_mode((500,620))
-pygame.display.set_caption("Tetris 2.0")
+pygame.display.set_caption("Tetris Game 2.0")
 
 clock = pygame.time.Clock()
 
