@@ -11,10 +11,12 @@ class Colors:
     white = (255, 255, 255)
     dark_blue = (44, 44, 127)
     light_blue = (59, 85, 162)
-    black =(0,0)
+    black = (0,0)
+    neon_orange = (255, 130, 42)
+    pink = (255, 47, 154)
     
     #define method used to call class and not instance of class
     @classmethod
     def get_cell_colors(cls):
          #order of colors matter 
-        return[cls.dark_grey, cls.green, cls.red, cls.orange, cls.yellow, cls.purple, cls.cyan, cls.blue, cls.black]
+        return[cls.dark_grey, cls.green, cls.red, cls.orange, cls.yellow, cls.purple, cls.cyan, cls.blue, cls.black, cls.neon_orange, cls.pink]
