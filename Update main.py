@@ -12,7 +12,7 @@ next_surface = title_font.render("Next", True, Colors.white)
 game_over_surface = title_font.render("GAME OVER", True, Colors.red)
 
 #rectangle score screen
-score_rect = pygame.Rect(320, 55, 170, 60)
+score_rect = pygame.Rect(345, 430, 120, 120)
 next_rect = pygame.Rect(320, 215, 170, 180)
 
 #create game window
@@ -54,21 +54,21 @@ while True:
             game.move_down()
         
     #Drawing
-    score_value_surface = title_font.render(str(game.score), True, Colors.orange)
+    score_value_surface = title_font.render(str(game.score), True, Colors.yellow)
     
     screen.fill(Colors.black)
     #Adding Background image
     screen.blit(background_img, (0, 0))
    #Adding Scoreboard backdrop
-    screen.blit(score_surface, (365, 20, 50, 50))
-    screen.blit(next_surface,(375, 180, 50, 50))
+    screen.blit(score_surface, (375, 400, 50, 50))
+    screen.blit(next_surface,(375, 180, 45, 50))
     
     if game.game_over == True:
-        screen.blit(game_over_surface, (320, 450, 50, 50))
+        screen.blit(game_over_surface, (325, 575, 35, 25))
     
-    pygame.draw.rect(screen, Colors.light_blue, score_rect, 0, 10)
+    pygame.draw.rect(screen, Colors.light_blue, score_rect, 0, 15)
     screen.blit(score_value_surface, score_value_surface.get_rect(centerx = score_rect.centerx, centery = score_rect.centery))
-    pygame.draw.rect(screen, Colors.light_blue, next_rect, 0, 10)  
+    pygame.draw.rect(screen, Colors.light_blue, next_rect, 0, 15)  
     game.draw(screen)
     
     pygame.display.update()
