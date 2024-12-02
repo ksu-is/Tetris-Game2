@@ -3,25 +3,33 @@ import sys
 from game import Game
 from colors import Colors
 
+
 pygame.init()
 
-#title 
-title_font = pygame.font.Font(None, 40)
-score_surface = title_font.render("Score", True, Colors.white)
-next_surface = title_font.render("Next", True, Colors.white)
-game_over_surface = title_font.render("GAME OVER", True, Colors.red)
+#Game fonts
+title_font = pygame.font.Font('titlefont.otf', 45)
+game_font = pygame.font.Font('gamefont.otf', 35)
+game_over_font = pygame.font.Font('gamefont.otf', 25)
+
+#Score And Game-over Text and title
+score_surface = game_font.render("SCORE", True, Colors.white)
+next_surface = game_font.render("NEXT", True, Colors.white)
+game_over_surface = game_over_font.render("GAME OVER", True, Colors.red)
+title_surface = title_font.render("TETRIS", True, Colors.cyan)
 
 #rectangle score screen
-score_rect = pygame.Rect(345, 430, 120, 120)
-next_rect = pygame.Rect(320, 215, 170, 180)
+score_rect = pygame.Rect(345, 445, 120, 120)
+next_rect = pygame.Rect(320, 220, 170, 170)
+title_rect = pygame.Rect(315, 25, 180, 50)
 
 #create game window
 screen = pygame.display.set_mode((500,620))
 pygame.display.set_caption("Tetris Game 2.0")
 
-#Importing new background
-background_img = pygame.image.load('background2.jpg')
 clock = pygame.time.Clock()
+
+#Adding a new Background
+background_img = pygame.image.load('background2.jpg')
 
 #create game object
 game = Game()
@@ -57,18 +65,20 @@ while True:
     score_value_surface = title_font.render(str(game.score), True, Colors.yellow)
     
     screen.fill(Colors.black)
-    #Adding Background image
+    #Adding image to background
     screen.blit(background_img, (0, 0))
-   #Adding Scoreboard backdrop
-    screen.blit(score_surface, (375, 400, 50, 50))
-    screen.blit(next_surface,(375, 180, 45, 50))
-    
+    #Adding scoreboard backgroud
+    screen.blit(score_surface, (345, 405, 50, 50))
+    screen.blit(next_surface,(355, 180, 45, 50))
+    screen.blit(title_surface,(315, 25, 50, 50))
+
     if game.game_over == True:
-        screen.blit(game_over_surface, (325, 575, 35, 25))
-    
-    pygame.draw.rect(screen, Colors.light_blue, score_rect, 0, 15)
+        screen.blit(game_over_surface, (325, 575, 25, 25))
+    #Score-background Shapes
+    pygame.draw.rect(screen, Colors.light_grey, score_rect, 0, 15)
     screen.blit(score_value_surface, score_value_surface.get_rect(centerx = score_rect.centerx, centery = score_rect.centery))
-    pygame.draw.rect(screen, Colors.light_blue, next_rect, 0, 15)  
+    pygame.draw.rect(screen, Colors.light_grey, next_rect, 0, 15)  
+    
     game.draw(screen)
     
     pygame.display.update()
